@@ -2,6 +2,7 @@ package com.rajat.algorithms.binarytree;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.Stack;
 
 public class TreeTraversals {
 
@@ -35,6 +36,41 @@ public class TreeTraversals {
 		}
 
 	}
+	
+	public static void spiralTraversal(Node root){
+		
+		if(root == null) return;
+		
+		Stack<Node> left = new Stack<Node>();
+		Stack<Node> right = new Stack<Node>();
+		left.add(root);
+		while(left.size() >0 || right.size()>0){
+			
+			while(left.size() >0){
+				Node current = left.pop();
+				System.out.print(current.val + "\t");
+				if(current.left!=null)right.push(current.left);
+				if(current.right!=null)right.push(current.right);
+			}
+			
+			System.out.println("\n");
+			
+			while(right.size()>0){
+				
+				Node current = right.pop();
+				System.out.println(current.val + "\t");
+				if(current.right!=null)left.push(current.right);
+				if(current.left!=null)left.push(current.left);
+				
+			}
+		}
+		
+		
+		
+		
+		
+	}
+	
 
 	static class Node {
 
