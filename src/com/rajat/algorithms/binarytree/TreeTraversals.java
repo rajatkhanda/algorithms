@@ -37,6 +37,8 @@ public class TreeTraversals {
 
 	}
 	
+	//spiral or zigzag traversal of binary tree
+	
 	public static void spiralTraversal(Node root){
 		
 		if(root == null) return;
@@ -64,6 +66,9 @@ public class TreeTraversals {
 				
 			}
 		}
+		
+		
+		//vertical order traversal
 		
 		
 		
